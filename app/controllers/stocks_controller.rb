@@ -1,17 +1,28 @@
 class StocksController < ApplicationController
+	#ssl_required :check_payment
 	def search
-		if params[:stock].present?
+		if params[:stock].blank?
+			flash.now.alert = "You have entered an empty search string"
+		else
 			@stock = Stock.new_form_lookup(params[:stock])
+			#@newstock = @stock
 			if @stack 
-				render partial: 'users/result'
+				respond_to do |format|
+			      format.js { render partial: 'users/result' }
+				end	
+
 			else
-				flash[:danger] = "You have entered an incorrect symbol"
-				redirect_to my_portfolio_path
+				respond_to do |format|
+					flash.now[:danger] = "You have entered an incorrect symbol"
+				    format.js { render partial: 'users/result' }
+				end
 			end
 
 		else
-			flash[:danger] = "You have entered an empty search string"
-			redirect_to my_portfolio_path
+			respond_to do |format|
+				#flash.now.notice = "Good luck now!"
+				format.js { render partial: 'users/result' }
+			end
 		end
 	end
 end
