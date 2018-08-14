@@ -87,6 +87,8 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
+    font-awesome-rails (4.7.0.4)
+      railties (>= 3.2, < 6.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     http-cookie (1.0.3)
@@ -159,8 +161,6 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
-    rails-ujs (5.1.0.beta1)
-      railties (>= 3.1)
     railties (5.2.0)
       actionpack (= 5.2.0)
       activesupport (= 5.2.0)
@@ -252,13 +252,13 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise-bootstrap-views
+  font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   pg
   puma (~> 3.11)
   rails (~> 5.2.0)
-  rails-ujs (~> 5.1.0.beta1)
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
